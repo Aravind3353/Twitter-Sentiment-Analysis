@@ -3,18 +3,18 @@ import joblib
 import re
 import string
 from nltk.tokenize import RegexpTokenizer
-from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 import numpy as np
 
 model = joblib.load('models/sentiment_model.pkl')
+stop_words = set(ENGLISH_STOP_WORDS)
 vectorizer = joblib.load('models/vectorizer.pkl')
 
 st.title("Twitter Sentiment Analyzer 🐦")
 st.subheader("Enter a tweet and see if it's Positive or Negative!")
 
 tokenizer = RegexpTokenizer(r'\w+')
-stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
 
 tweet = st.text_area("Enter Tweet")
