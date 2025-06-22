@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints/
+
+# Virtual environment
+venv/
+env/
+
+# Model files (too large for GitHub)
+models/*.pkl
+
+# Dataset (avoid pushing large raw data)
+data/
+
+# Kaggle API key (DON'T UPLOAD!)
+kaggle.json
+
+# Streamlit secrets
+.secrets.toml
