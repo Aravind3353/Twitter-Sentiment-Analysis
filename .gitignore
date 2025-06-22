@@ -9,9 +9,6 @@ __pycache__/
 venv/
 env/
 
-# Model files (too large for GitHub)
-models/*.pkl
-
 # Dataset (avoid pushing large raw data)
 data/
 
