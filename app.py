@@ -39,8 +39,16 @@ if st.button("Analyze Sentiment"):
     if tweet.strip():
         clean = clean_tweet(tweet)
         vec = vectorizer.transform([clean]).toarray()
-        prediction = model.predict(vec)[0]
-        label = "🙂 Positive" if prediction == 1 else "☹️ Negative"
-        st.success(f"Sentiment: {label}")
+        
+        proba = model.predict_proba(vec)[0][1]
+
+        if proba > 0.6:
+            label = "🙂 Positive"
+        elif proba < 0.4:
+            label = "☹️ Negative"
+        else:
+            label = "😐 Neutral"
+
+        st.success(f"Sentiment: {label} (score: {proba:.2f})")
     else:
         st.warning("Please enter a tweet first.")
