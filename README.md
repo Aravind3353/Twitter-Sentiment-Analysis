@@ -3,6 +3,8 @@
 This project performs sentiment analysis on Twitter data using Machine Learning (TF-IDF + Logistic Regression). It includes a Streamlit-based web app for real-time sentiment prediction.
 
 ---
+# Twitter Sentiment Analysis
+🚀 [Try the Live App](https://twitter-sentiment-analysis-ephgshrvb72pkuokq8zehd.streamlit.app/)
 
 ## 💡 Features
 
